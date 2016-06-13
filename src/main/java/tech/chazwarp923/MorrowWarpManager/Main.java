@@ -1,4 +1,4 @@
-package tech.chazwarp923.MorrowWarpManager;
+package main.java.tech.chazwarp923.MorrowWarpManager;
 
 import java.io.File;
 import java.io.FileOutputStream;
