@@ -28,7 +28,8 @@ public class Main {
     
     private static void handleNexusLink (String nxm) throws IOException {
     	String url = nxm;
-        url.replace("nxm://", "http://www.nexusmods.com");
+        url = url.replace("nxm://", "http://www.nexusmods.com/");
+        System.out.println(url);
         URL nexusLink = new URL(url);
 		
         //Begin code borrowed from http://www.codejava.net/java-se/networking/use-httpurlconnection-to-download-file-from-an-http-url
@@ -64,6 +65,8 @@ public class Main {
             String saveFilePath = saveDir + File.separator + fileName;
              
             // opens an output stream to save into file
+            File tmpFile = new File(saveDir);
+            tmpFile.mkdirs();
             FileOutputStream outputStream = new FileOutputStream(saveFilePath);
  
             int bytesRead = -1;
