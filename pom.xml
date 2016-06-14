@@ -7,58 +7,12 @@
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>MorrowWarpManager</name>
+  <name>MorrowWarp Manager</name>
   <url>http://chazwarp923.tech</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <resources>
-      <resource>
-        <directory>src</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-      <plugin>
-  		<artifactId>maven-assembly-plugin</artifactId>
-  		<configuration>
-    		<archive>
-      			<manifest>
-        			<mainClass>com.chazwarp.JFileExplorer.Main</mainClass>
-      			</manifest>
-    		</archive>
-    		<descriptorRefs>
-      			<descriptorRef>jar-with-dependencies</descriptorRef>
-    		</descriptorRefs>
-  		</configuration>
-  		<executions>
-    		<execution>
-      			<id>make-assembly</id> <!-- this is used for inheritance merges -->
-      			<phase>package</phase> <!-- bind to the packaging phase -->
-      			<goals>
-        			<goal>single</goal>
-      			</goals>
-    		</execution>
-  		</executions>
-	</plugin>
-    </plugins>
-    <extensions>
-    </extensions>
-  </build>
 
   <dependencies>
     <dependency>
@@ -71,10 +25,6 @@
     	<groupId>commons-configuration</groupId>
     	<artifactId>commons-configuration</artifactId>
     </dependency>
-    <dependency>
-    	<groupId>commons-io</groupId>
-    	<artifactId>commons-io</artifactId>
-    </dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>
@@ -83,11 +33,25 @@
   			<artifactId>commons-configuration</artifactId>
   			<version>1.10</version>
   		</dependency>
-  		<dependency>
-  			<groupId>commons-io</groupId>
-  			<artifactId>commons-io</artifactId>
-  			<version>2.5</version>
-  		</dependency>
   	</dependencies>
   </dependencyManagement>
+
+  <build>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>tech.chazwarp923/MorrowWarpManager.Main</mainClass>
+              </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+  </build>
+  <ciManagement>
+  	<system>Jenkins</system>
+  	<url>http://chttp://chazwarp923.tech:8080/job/MorrowWarpManager</url>
+  </ciManagement>
 </project>
