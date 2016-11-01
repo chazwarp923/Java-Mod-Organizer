@@ -1,3 +1,3 @@
-# MorrowWarp Manager
-[![Build Status](http://chazwarp923.tech:8080/buildStatus/icon?job=MorrowWarpManager)](http://chazwarp923.tech:8080/job/MorrowWarpManager)
-A Mod manager for OpenMW written in Java
+# Java Mod Organizer
+[![Build Status](http://chazwarp923.tech/jenkins/view/Normal%20Java/job/Java%20Mod%20Organizer/badge/icon)](http://chazwarp923.tech/jenkins/view/Normal%20Java/job/Java%20Mod%20Organizer/)
+My rendition of Mod organizer, in Java
