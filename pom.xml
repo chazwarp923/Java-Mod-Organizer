@@ -37,7 +37,7 @@
     	<artifactId>qtjambi</artifactId>
     	<version>4.8.7</version>
     	<scope>system</scope>
-    	<systemPath>${project.basedir}/lib/qtjambi-4.8.7.jar</systemPath>
+    	<systemPath>${project.basedir}/src/main/resources/qtjambi-4.8.7.jar</systemPath>
     </dependency>
     <dependency>
     	<groupId>commons-collections</groupId>
