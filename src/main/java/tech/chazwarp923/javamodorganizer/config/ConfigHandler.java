@@ -1,4 +1,4 @@
-package tech.chazwarp923.MorrowWarpManager.config;
+package tech.chazwarp923.javamodorganizer.config;
 
 import java.io.File;
 

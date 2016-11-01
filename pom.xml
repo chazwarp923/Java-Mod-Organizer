@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>tech.chazwarp923</groupId>
-  <artifactId>MorrowWarpManager</artifactId>
+  <artifactId>JavaModOrganizer</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>MorrowWarp Manager</name>
+  <name>Java Mod Organizer</name>
   <url>http://chazwarp923.tech</url>
 
   <properties>
@@ -30,8 +30,8 @@
     	<artifactId>commons-io</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.jsoup</groupId>
-    	<artifactId>jsoup</artifactId>
+    	<groupId>net.sourceforge.htmlunit</groupId>
+    	<artifactId>htmlunit</artifactId>
     </dependency>
   </dependencies>
   <dependencyManagement>
@@ -47,9 +47,9 @@
   			<version>2.5</version>
   		</dependency>
   		<dependency>
-  			<groupId>org.jsoup</groupId>
-  			<artifactId>jsoup</artifactId>
-  			<version>1.9.2</version>
+  			<groupId>net.sourceforge.htmlunit</groupId>
+  			<artifactId>htmlunit</artifactId>
+  			<version>2.23</version>
   		</dependency>
   	</dependencies>
   </dependencyManagement>
@@ -83,6 +83,6 @@
   </build>
   <ciManagement>
   	<system>Jenkins</system>
-  	<url>http://chttp://chazwarp923.tech:8080/job/MorrowWarpManager</url>
+  	<url>http://chazwarp923.tech/jenkins/job/MorrowWarpManager</url>
   </ciManagement>
 </project>
