@@ -17,6 +17,8 @@ import com.gargoylesoftware.htmlunit.html.HtmlScript;
 import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 
+import tech.chazwarp923.javamodorganizer.config.ConfigHandler;
+
 public class DownloadManager {
 	
 	public static void handleNexusLink (String nxm) throws IOException {
@@ -27,7 +29,6 @@ public class DownloadManager {
     		game = "skyrimspecialedition";
     	}
     	String url = "http://www.nexusmods.com/" + game + "/ajax/downloadfile?id=" + fileId + "&skipdonate";
-    	//http://www.nexusmods.com/skyrimspecialedition/ajax/downloadfile?id=2106&skipdonate
     	
     	final WebClient webClient = new WebClient(BrowserVersion.BEST_SUPPORTED);
         webClient.getOptions().setJavaScriptEnabled(false);
@@ -36,9 +37,9 @@ public class DownloadManager {
 
         final HtmlSubmitInput button = (HtmlSubmitInput) form.getInputsByValue("Login").get(0);
         final HtmlTextInput textField = form.getInputByName("username");
-        textField.setValueAttribute("username");
+        textField.setValueAttribute((String) ConfigHandler.getConfigValue("username"));
         final HtmlPasswordInput textField2 = form.getInputByName("password");
-        textField2.setValueAttribute("password");
+        textField2.setValueAttribute((String) ConfigHandler.getConfigValue("password"));
         button.click();
         
         final HtmlPage downloadPage = webClient.getPage(url);

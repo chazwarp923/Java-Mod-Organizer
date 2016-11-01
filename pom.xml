@@ -18,7 +18,6 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -32,6 +31,17 @@
     <dependency>
     	<groupId>net.sourceforge.htmlunit</groupId>
     	<artifactId>htmlunit</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>net.sf.qtjambi</groupId>
+    	<artifactId>qtjambi</artifactId>
+    	<version>4.8.7</version>
+    	<scope>system</scope>
+    	<systemPath>${project.basedir}/lib/qtjambi-4.8.7.jar</systemPath>
+    </dependency>
+    <dependency>
+    	<groupId>commons-collections</groupId>
+    	<artifactId>commons-collections</artifactId>
     </dependency>
   </dependencies>
   <dependencyManagement>
@@ -51,6 +61,16 @@
   			<artifactId>htmlunit</artifactId>
   			<version>2.23</version>
   		</dependency>
+  		<dependency>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>3.8.1</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>commons-collections</groupId>
+  			<artifactId>commons-collections</artifactId>
+  			<version>3.2.2</version>
+  		</dependency>
   	</dependencies>
   </dependencyManagement>
 
@@ -62,7 +82,7 @@
   		    <configuration>
   		      <archive>
       			  <manifest>
-        			  <mainClass>tech.chazwarp923.MorrowWarpManager.Main</mainClass>
+        			  <mainClass>tech.chazwarp923.javamodorganizer.Main</mainClass>
       			  </manifest>
     		    </archive>
     		    <descriptorRefs>
@@ -83,6 +103,6 @@
   </build>
   <ciManagement>
   	<system>Jenkins</system>
-  	<url>http://chazwarp923.tech/jenkins/job/MorrowWarpManager</url>
+  	<url>http://www.chazwarp923.tech/jenkins/job/Java%20Mod%20Organizer/</url>
   </ciManagement>
 </project>

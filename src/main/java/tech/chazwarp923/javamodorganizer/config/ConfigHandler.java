@@ -8,21 +8,52 @@ import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
 
 public class ConfigHandler {
 
-	public static String getConfigLocation() {
-	    return System.getProperty("user.home") + File.separator + ".MorrowWarpManager/MorrowWarpManager.xml";
+	protected static XMLConfiguration config;
+	
+	private static String getConfigLocation() {
+	    return System.getProperty("user.home") + File.separator + ".JavaModOrganizer/";
 	}
 	
-	public static XMLConfiguration loadConfig() throws ConfigurationException {
-		File configFile = new File(getConfigLocation());
-		if(!configFile.exists()) {
-			configFile.mkdirs();
+	private static void setConfigDefaults() {
+		config.setProperty("username", " ");
+		config.setProperty("password", " ");
+		try {
+			config.save();
+		} catch (ConfigurationException e) {
+			e.printStackTrace();
 		}
-		XMLConfiguration config = new XMLConfiguration();
+	}
+	
+	public static void loadConfig() {
+		File configFile = new File(getConfigLocation());
+		if(!configFile.exists())
+			configFile.mkdirs();
+		configFile = new File(getConfigLocation() + "JavaModOrganizer.xml");
+		config = new XMLConfiguration();
 		config.setFile(configFile);
-		config.load();
+		if(!configFile.exists()) {
+			try {
+				config.save();
+				setConfigDefaults();
+			} catch (ConfigurationException e) {
+				e.printStackTrace();
+			}
+		}
+		try {
+			config.load();
+		} catch (ConfigurationException e) {
+			e.printStackTrace();
+		}
 		config.setAutoSave(true);
 		config.setReloadingStrategy(new FileChangedReloadingStrategy());
-		return config;
+	}
+	
+	public static void setConfigValue(String property, Object value) {
+		config.setProperty(property, value);
+	}
+	
+	public static Object getConfigValue(String property) {
+		return config.getProperty(property);
 	}
 	
 }
